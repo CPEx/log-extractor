@@ -4,7 +4,8 @@ require "vendor/autoload.php";
 // read the configuration file
 $dataDir = getenv('KBC_DATADIR') . DIRECTORY_SEPARATOR;
 $configFile = $dataDir . 'config.json';
-$config = json_decode(file_get_contents($configFile), true);
+$configAll = json_decode(file_get_contents($configFile), true);
+$config = $configAll['parameters'];
 
 if (!isset($config['outputFile'])) {
     $config['outputFile'] = 'accesslog.csv';
