@@ -8,7 +8,7 @@ $configAll = json_decode(file_get_contents($configFile), true);
 $config = $configAll['parameters'];
 
 if (!isset($config['outputFile'])) {
-    $config['outputFile'] = 'accesslog.csv';
+    $config['outputFile'] = $dataDir . 'out' . DIRECTORY_SEPARATOR . 'tables' . DIRECTORY_SEPARATOR .'accesslog.csv';
 }
 
 try {
